@@ -4,7 +4,8 @@ const Cart = () => {
     return (
         <div>
           Cart
-          
+          Hello
+          <HI></HI>
         </div>
     );
 };
