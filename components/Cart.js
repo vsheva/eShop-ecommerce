@@ -5,7 +5,7 @@ const Cart = () => {
         <div>
           Cart
           Hello
-          <HI></HI>
+          <HI>Hi</HI>
         </div>
     );
 };
