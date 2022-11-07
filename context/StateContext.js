@@ -6,8 +6,8 @@ const context = createContext();
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(false);
-  const [totalQuantities, setTotalQuantities] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalQuantities, setTotalQuantities] = useState(0);
   const [quanty, setQuanty] = useState(1);
 
   const increaseQuantity = () => {
@@ -49,6 +49,7 @@ export const StateContext = ({ children }) => {
     <context.Provider
       value={{
         showCart,
+        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
