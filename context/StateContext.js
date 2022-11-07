@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import product from '../sanity_ecommerce/schemas/product';
 
 const context = createContext();
 
@@ -9,6 +10,9 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [quanty, setQuanty] = useState(1);
+
+  let foundProduct;
+  let index;
 
   const increaseQuantity = () => {
     setQuanty(prev => prev + 1);
@@ -45,6 +49,23 @@ export const StateContext = ({ children }) => {
     toast.success(`${quanty} ${product.name} added to the cart.`);
   };
 
+  const toggleCartItemQuantity = (id, value) => {
+    foundProduct = cartItems.find(item => item._id === id);
+    index = cartItems.findIndex(item => product._id === id);
+
+    if (value === 'inc') {
+      setCartItems([...cartItems, { ...foundProduct, quantity: foundProduct.quantity + 1 }]);
+      setTotalPrice(prevTotalPrice => prevTotalPrice + foundProduct.price);
+      setTotalQuantities(prevTotalQuantities => prevTotalQuantities + 1);
+    } else if (value === 'dec') {
+      if (foundProduct.quantity > 1) {
+        setCartItems([...cartItems, { ...foundProduct, quantity: foundProduct.quantity - 1 }]);
+        setTotalPrice(prevTotalPrice => prevTotalPrice - foundProduct.price);
+        setTotalQuantities(prevTotalQuantities => prevTotalQuantities - 1);
+      }
+    }
+  };
+
   return (
     <context.Provider
       value={{
@@ -54,6 +75,7 @@ export const StateContext = ({ children }) => {
         totalPrice,
         totalQuantities,
         quanty,
+        toggleCartItemQuantity,
         onAdd,
         increaseQuantity,
         decreaseQuantity,
