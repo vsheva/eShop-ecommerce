@@ -103,6 +103,8 @@ span.text-red {
   width: 100%;
 }
 .product-card{
+  background-color: #fffdfc; /**/
+
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
@@ -114,7 +116,10 @@ span.text-red {
 }
 .product-image{
   border-radius: 15px;
-  background-color: #ebebeb;
+  /*background-color: #ebebeb;*/
+  background-color: #fffdfc;
+  /*background-color: #f2f0f0*/
+  /*background-color: #34eb67;*/
   transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
@@ -130,7 +135,8 @@ span.text-red {
 
 .hero-banner-container{
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  /*background-color: #dcdcdc;*/
+  background-color: #34eb67;
   border-radius: 15px;
   position: relative;
   height: 500px;
@@ -212,7 +218,8 @@ span.text-red {
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  /*background-color: #f02d34;*/
+  background-color: #34eb67;
   border-radius: 15px;
   position: relative;
   height: 400px;
