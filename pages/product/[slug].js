@@ -96,11 +96,8 @@ export const getStaticPaths = async () => {
   `;
 
   const products = await client.fetch(query);
-
   const paths = products.map(product => ({
-    params: {
-      slug: product.slug.current,
-    },
+    params: {slug: product.slug.current}
   }));
 
   return {
@@ -112,12 +109,11 @@ export const getStaticPaths = async () => {
 //SSR
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productsQuery = '*[_type == "product"]';
-
   const product = await client.fetch(query);
+
+  const productsQuery = `*[_type == "product"]`;
   const products = await client.fetch(productsQuery);
 
-  console.log(product);
 
   return {
     props: { products, product },
