@@ -29,14 +29,14 @@ const Cart = () => {
       body: JSON.stringify(cartItems),
     });
 
-    if(response.statusCode === 500) return;
+    if (response.statusCode === 500) return;
 
     const data = await response.json();
 
     toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
-  }
+  };
 
   return (
     <div className="cart-wrapper" ref={cartRef}>
@@ -78,9 +78,7 @@ const Cart = () => {
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="num">
-                          {item.quantity}
-                        </span>
+                        <span className="num">{item.quantity}</span>
                         <span
                           className="plus"
                           onClick={() => toggleCartItemQuantity(item._id, 'inc')}

@@ -1,6 +1,6 @@
-import Stripe from "stripe";
+import Stripe from 'stripe';
 
-const stripe = new Stripe (process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -17,10 +17,11 @@ export default async function handler(req, res) {
           { shipping_rate: 'shr_1M2NOqA8ylyu8Tn1G0O6L72N' },
           { shipping_rate: 'shr_1M2NQaA8ylyu8Tn1SSxI7pVp' },
         ],
-        line_items: req.body.map((item) => {
+        line_items: req.body.map(item => {
           const img = item.image[0].asset._ref;
           const newImage = img
-            .replace('image-', 'https://cdn.sanity.io/images/fmde5973/production/').replace('-webp', '.webp');
+            .replace('image-', 'https://cdn.sanity.io/images/fmde5973/production/')
+            .replace('-webp', '.webp');
 
           return {
             price_data: {
@@ -36,11 +37,8 @@ export default async function handler(req, res) {
               minimum: 1,
             },
             quantity: item.quantity,
-
-
           };
         }),
-
 
         success_url: `${req.headers.origin}/success`,
         cancel_url: `${req.headers.origin}/canceled`,

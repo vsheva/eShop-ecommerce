@@ -7,28 +7,24 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { quanty, increaseQuantity, decreaseQuantity, onAdd, setShowCart} = useStateContext();
+  const { quanty, increaseQuantity, decreaseQuantity, onAdd, setShowCart } = useStateContext();
 
-  const handleBuyNow =()=>{
+  const handleBuyNow = () => {
     onAdd(product, quanty);
     setShowCart(true);
-  }
+  };
 
   return (
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
-              src={urlFor(image && image[index])}
-              className="product-detail-image"
-              alt="image"
-            />
+            <img src={urlFor(image && image[index])} className="product-detail-image" alt="image" />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img
-                  key={i}
+                key={i}
                 src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
@@ -55,7 +51,9 @@ const ProductDetails = ({ product, products }) => {
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" onClick={decreaseQuantity}><AiOutlineMinus /></span>
+              <span className="minus" onClick={decreaseQuantity}>
+                <AiOutlineMinus />
+              </span>
               <span className="num">{quanty}</span>
               <span className="plus" onClick={increaseQuantity}>
                 <AiOutlinePlus />
@@ -64,7 +62,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
 
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick={()=>onAdd(product, quanty)}>
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, quanty)}>
               Add to Cart
             </button>
             <button type="button" className="buy-now" onClick={handleBuyNow}>
@@ -100,7 +98,7 @@ export const getStaticPaths = async () => {
 
   const products = await client.fetch(query);
   const paths = products.map(product => ({
-    params: {slug: product.slug.current}
+    params: { slug: product.slug.current },
   }));
 
   return {
@@ -116,7 +114,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const productsQuery = `*[_type == "product"]`;
   const products = await client.fetch(productsQuery);
-
 
   return {
     props: { products, product },
