@@ -146,7 +146,11 @@ span.text-red {
 }
 .hero-banner-container .beats-solo{
   font-size: 20px;
+  margin-left: 2px;/**/
+  color: #324d67;  /**/
+  font-weight: 500; /**/
 }
+
 .hero-banner-container button{
   border-radius: 15px;
   padding: 10px 16px;
@@ -160,15 +164,22 @@ span.text-red {
   z-index:10000 !important;
 }
 
+
 .hero-banner-container h3{
+  color:#324d67; /**/
   font-size: 4rem;
-  margin-top: 4px;
+  /*margin-top: 4px;*/
+  margin-top: 7px
 }
 .hero-banner-container h1{
   color: white;
   font-size: 10em;
-  margin-left: -20px;
+ /* margin-left: -20px;*/
+  margin-left: -10px;
   text-transform: uppercase;
+
+
+
 }
 .hero-banner-image{
   position: absolute;
