@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { client } from '../lib/client';
+import ReactPaginate from 'react-paginate';
 
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = ({ products, bannerData }) => {
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0); //index of the first item on the current page
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage; //index of the last item on the current page
+    setCurrentItems(products.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(products.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, products]);
+
+  const handlePageClick = event => {
+    const newOffset = (event.selected * itemsPerPage) % products.length;
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
@@ -13,10 +30,29 @@ const Home = ({ products, bannerData }) => {
         <p>Devices of many variations</p>
       </div>
       <div className="products-container">
-        {products?.map(product => (
+        {currentItems?.map(product => (
           <Product key={product._id} product={product} />
         ))}
       </div>
+
+      {/* Pagination*/}
+
+      <ReactPaginate
+        nextLabel=">"
+        onPageChange={handlePageClick}
+        pageCount={pageCount}
+        previousLabel="<"
+        renderOnZeroPageCount={null}
+
+        containerClassName="pagination"
+        pageLinkClassName="page-num"
+        previousLinkClassName="page-num"
+        nextLinkClassName="page-num"
+        activeLinkClassName="active"
+      />
+
+      {/* Pagination*/}
+
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
   );

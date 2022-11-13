@@ -16,6 +16,38 @@ a {
   text-decoration: none;
 }
 
+/* Pagination*/
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top:2rem;
+  font-size:1.2rem;
+  gap:2px;
+}
+
+
+.pagination .page-num {
+  padding: 8px 15px;
+  cursor:pointer;
+  border-radius:3px;
+  font-weight: 400;
+}
+
+.pagination .page-num:hover {
+  background-color: #34eb67;
+  color: #fff;
+}
+
+.pagination .active{
+  background-color:#34eb67;
+}
+
+/* Pagination*/
+
 .main-container {
   max-width: 1400px;
   margin: auto;
