@@ -18,6 +18,43 @@ a {
 
 /* Pagination*/
 
+.products-pagination {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.pagination li {
+  display: inline-block;
+}
+.pagination a {
+  text-align: center;
+  width: 45px;
+  line-height: 42px;
+  height: 45px;
+  border: 1px solid #34eb67;
+  border-radius: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+  color: #34eb67;
+}
+.pagination a:hover {
+   background-color: #34eb67;
+   color: #fff;
+ }
+
+
+
+.selected  a{
+
+  background-color: #34eb67;
+  color: #fff;
+
+}
+
+
+
+/*
 .pagination {
   list-style: none;
   display: flex;
@@ -28,9 +65,10 @@ a {
   font-size:1.2rem;
   gap:2px;
 }
+*/
 
 
-.pagination .page-num {
+/*.pagination .page-num {
   padding: 8px 15px;
   cursor:pointer;
   border-radius:3px;
@@ -44,7 +82,7 @@ a {
 
 .pagination .active{
   background-color:#34eb67;
-}
+}*/
 
 /* Pagination*/
 
@@ -254,6 +292,7 @@ span.text-red {
 .footer-banner-container {
   padding: 100px 40px;
   /*background-color: #f02d34;*/
+  /*background-color: #34eb67;*/
   background-color: #34eb67;
   border-radius: 15px;
   position: relative;
@@ -261,7 +300,8 @@ span.text-red {
   line-height: 1;
   color: white;
   width: 100%;
-  margin-top: 120px;
+  /*margin-top: 120px;*/
+  margin-top: 80px;
 }
 .banner-desc {
   display: flex;

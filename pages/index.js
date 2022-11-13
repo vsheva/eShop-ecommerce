@@ -36,20 +36,22 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       {/* Pagination*/}
+        {<div className="products-pagination">
+            <ReactPaginate
+                nextLabel=">"
+                onPageChange={handlePageClick}
+                pageCount={pageCount}
+                previousLabel="<"
+                renderOnZeroPageCount={null}
 
-      <ReactPaginate
-        nextLabel=">"
-        onPageChange={handlePageClick}
-        pageCount={pageCount}
-        previousLabel="<"
-        renderOnZeroPageCount={null}
-
-        containerClassName="pagination"
-        pageLinkClassName="page-num"
-        previousLinkClassName="page-num"
-        nextLinkClassName="page-num"
-        activeLinkClassName="active"
-      />
+                containerClassName="pagination"
+                pageLinkClassName="page-num"
+                previousLinkClassName="page-num"
+                nextLinkClassName="page-num"
+                activeLinkClassName="active"
+            />
+            </div>
+            }
 
       {/* Pagination*/}
 
