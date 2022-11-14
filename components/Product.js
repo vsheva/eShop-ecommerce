@@ -4,6 +4,7 @@ import { urlFor } from '../lib/client';
 import product from '../sanity_ecommerce/schemas/product';
 
 const Product = ({ product: { image, name, slug, price } }) => {
+  console.log('product in Product', product);
   return (
     <div>
       <Link href={`/product/${slug.current}`}>

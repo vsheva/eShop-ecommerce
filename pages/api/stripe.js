@@ -4,8 +4,6 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    console.log(req.body); //get cartItems
-
     try {
       const params = {
         submit_type: 'pay',

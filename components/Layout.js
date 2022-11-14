@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
       <Head>
         <title>ASV Store </title>
       </Head>
-
       <header>
         <Navbar />
       </header>
