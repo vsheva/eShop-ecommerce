@@ -14,7 +14,7 @@ This is an E-commerce application built with Nextjs, Sanity.io, and Stripe. A fu
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [Styled Components](https://styled-components.com/)
 - [Flexbox](https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout)
-- [Material UI](https://mui.com)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [Next JS](https://nextjs.org/)
 - [SSR](https://nextjs.org/)
 - [Router](https://nextjs.org/docs/api-reference/next/router)
