@@ -1,4 +1,4 @@
-# [eShop ecommerce project](https://ecommerce-tawny-theta.vercel.app/)
+# [EShop Ecommerce Project](https://ecommerce-tawny-theta.vercel.app/)
 
 <p align="center"> 
 <img src="public/img/ecommerce.gif" alt="banner"/>
