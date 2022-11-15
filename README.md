@@ -27,7 +27,6 @@ This is an E-commerce application built with Nextjs, Sanity.io, and Stripe. A fu
 - [Sanity](https://www.sanity.io/)
 - [Stripe](https://stripe.com/)
 
----
 
 ###  Deploy on Vercel
 ###  [Live Demo](https://ecommerce-tawny-theta.vercel.app/)
