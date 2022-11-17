@@ -6,7 +6,7 @@
 </p>
 
 ### 🔎 What is this app for?
-This is an E-commerce application built with Nextjs, Sanity.io, and Stripe. A fully responsive Modern Full Stack Ecommerce application with Payments functionality. Integrate Stripe to manage payments, products, shipping rates, and the entire checkout process.
+ This is an E-commerce application built with Nextjs, Sanity.io, and Stripe. A fully responsive Modern Full Stack Ecommerce application with Payments functionality. Integrate Stripe to manage payments, products, shipping rates, and the entire checkout process.
 
 
 ###  The tech stack is:
