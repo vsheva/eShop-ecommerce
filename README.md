@@ -31,6 +31,9 @@
 ###  Deploy on Vercel
 ###  [Live Demo](https://ecommerce-tawny-theta.vercel.app/)
 
+![Image alt](https://github.com/vsheva/eShop-ecommerce/blob/main/screen-12.png)
+![Image alt](https://github.com/vsheva/eShop-ecommerce/blob/main/screen11.png)
+
 ---
 
 ### 🪛 Getting Started
